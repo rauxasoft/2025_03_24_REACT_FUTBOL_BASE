@@ -3,11 +3,23 @@ import Home from "./HomeComponent";
 import ListadoEquipos from "./ListadoEquipoComponent";
 import ListadoArbitros from "./ListadoArbitrosComponent";
 import ListadoPartidos from "./ListadoPartidosComponent";
+import AlbumFichas from "./AlbumEquiposComponent";
 
 function App() {
+
+    if(Math.random() > 0){
+        
+    return(
+        <>
+            <AlbumFichas/>
+        </>
+    )
+}
+
     return (
        
         <BrowserRouter>
+            <div className="container">
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
@@ -25,7 +37,7 @@ function App() {
                 <Route path="/arbitros" element={<ListadoArbitros />}/>
                 
             </Routes>
-
+            </div>
         </BrowserRouter>
     );
 }

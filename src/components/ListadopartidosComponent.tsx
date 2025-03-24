@@ -9,13 +9,9 @@ function ListadoPartidos(){
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>();
 
-    // 1.- Inicializar el componente (usar el servicio para traernos los datos)
-
     useEffect(() => {
         fetchData();
     }, []);
-
-    // 2.- Definir una función que haga uso del servicio y se traiga los datos
 
     const fetchData = () => {
 
@@ -32,19 +28,13 @@ function ListadoPartidos(){
 
     }
 
-    // 3.- Devolver el HTML correspondiente a la fase de carga (loading)
-
     if(loading){
         return (<p>Cargando datos...</p>)
     }
 
-    // 4.- Devolver el HTML correspondiente a una situación de error
-
     if(error){
         return (<p>ERROR!</p>)
     }
-
-    // 5.- Devolver el HTML correspondiente a la tabla partidos
 
     return (
         <>
@@ -60,8 +50,8 @@ function ListadoPartidos(){
                     <th scope="col">Estado</th>
                 </tr>
             </thead>
-            {partidos?.map((partido) => (
-                <tr key={partido.id}>
+            {partidos?.map((partido, i) => (
+                <tr key={i}>
                     <td>{partido.id}</td>
                     <td>{partido.local.nombre}</td>
                     <td>{partido.golesLocal}</td>
