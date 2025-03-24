@@ -1,8 +1,8 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./HomeComponent";
 import ListadoEquipos from "./ListadoEquipoComponent";
-import ListadoPartidos from "./ListadopartidosComponent";
 import ListadoArbitros from "./ListadoArbitrosComponent";
+import ListadoPartidos from "./ListadoPartidosComponent";
 
 function App() {
     return (
