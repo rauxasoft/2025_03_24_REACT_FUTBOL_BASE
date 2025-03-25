@@ -1,0 +1,30 @@
+.fichaPartidoFinalizado {
+    pointer-events: none;       /* Evita interacciones (clics, focus, etc.) */
+    opacity: 0.5;               /* Hace el contenido más transparente */
+    filter: blur(1px);          /* Le da un ligero difuminado */
+    user-select: none;          /* Evita seleccionar texto */
+}
+
+.finalizado{
+    position: relative;
+    overflow: hidden; /* importante para que el ribbon no se salga */
+}
+
+/* Ribbon para mostrar "FINALIZADO" */
+.finalizado::after {
+    content: "FINALIZADO";
+    position: absolute;
+    top: 30px;
+    right: -44px; 
+    text-align: center; 
+    background: rgb(132, 3, 3); /* verde */
+    color: white;
+    font-weight: bold;
+    padding: 5px 50px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    font-size: 14px;
+    z-index: 10;
+    pointer-events: none;
+  }
+

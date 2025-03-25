@@ -40,6 +40,7 @@ function AltaArbitro() {
 
     return (
         <div className="container mt-4">
+            
             <h2>Nuevo Árbitro</h2>
 
             {error && (

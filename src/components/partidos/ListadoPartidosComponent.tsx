@@ -38,7 +38,7 @@ function ListadoPartidos(){
     }
 
     return (
-        <>
+        <div className="container mt-4">
         <h2>Listado de Partidos</h2>
         <Table striped bordered hover>
             <thead>
@@ -64,7 +64,7 @@ function ListadoPartidos(){
             ))}    
             </tbody>
         </Table>
-        </>
+        </div>
     )
 }
 

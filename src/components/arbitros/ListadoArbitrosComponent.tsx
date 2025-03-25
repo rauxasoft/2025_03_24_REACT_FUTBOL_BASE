@@ -38,7 +38,7 @@ function ListadoArbitros(){
     }
 
     return (
-        <>
+        <div className="container mt-4">
         <h2>Listado de Árbitros</h2>
         <Table striped bordered hover>
             <thead>
@@ -60,7 +60,7 @@ function ListadoArbitros(){
             ))}    
             </tbody>
         </Table>
-        </>
+        </div>
     )
 }
 

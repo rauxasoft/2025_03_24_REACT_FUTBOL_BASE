@@ -7,13 +7,14 @@ type PartidoProps = {
     equipoVisitante: string;
     linkEquipoLocal: string;
     linkEquipoVisitante: string;
+    estado: string;
 }
 
 function FichaPartido(partidoProps: PartidoProps){
 
     return (
-        
-        <div className="card text-center mx-auto" style={{ width: "24rem" }}>
+        <div className={`card text-center mx-auto ${partidoProps.estado === 'FINALIZADO' ? 'fichaPartidoFinalizado finalizado' : ''}`} 
+             style={{ width: "22rem"}}>
         
         <div>
             <h4 className="card-title">{partidoProps.equipoLocal} - {partidoProps.equipoVisitante}</h4>

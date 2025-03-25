@@ -37,29 +37,29 @@ function ListadoEquipos(){
     }
 
     return (
-        <>
-        <h2>Listado de Equipos</h2>
-        <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Escudo</th>
-                </tr>
-            </thead>
-            <tbody>
-            {equipos?.map((equipo) => (
-                <tr key={equipo.id}>
-                    <td>{equipo.id}</td>
-                    <td>{equipo.nombre}</td>
-                    <td>{equipo.ciudad}</td>
-                    <td>{equipo.linkEscudo}</td>
-                </tr>
-            ))}    
-            </tbody>
-        </Table>
-        </>
+        <div className="container mt-4">
+            <h2>Listado de Equipos</h2>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Escudo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {equipos?.map((equipo) => (
+                    <tr key={equipo.id}>
+                        <td>{equipo.id}</td>
+                        <td>{equipo.nombre}</td>
+                        <td>{equipo.ciudad}</td>
+                        <td>{equipo.linkEscudo}</td>
+                    </tr>
+                ))}    
+                </tbody>
+            </Table>
+        </div>
     )
 }
 

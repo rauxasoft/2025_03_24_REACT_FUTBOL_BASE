@@ -6,6 +6,7 @@ import ListadoPartidos from "./partidos/ListadoPartidosComponent";
 import PartidoAlMinuto from "./partidos/PartidoAlMinutoComponent";
 import AltaArbitro from "./arbitros/AltaArbitroComponent";
 import ListadoFichasPartidos from "./partidos/ListadoFichasPartidosComponent";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 function App() {
 
@@ -13,17 +14,33 @@ function App() {
        
         <BrowserRouter>
             <div className="container">
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/partidos">Partidos</Link></li>
-                        <li><Link to="/fichas-partidos">Fichas de Partidos</Link></li>
-                        <li><Link to="/equipos">Equipos</Link></li>
-                        <li><Link to="/arbitros">Árbitros</Link></li>
-                        <li><Link to="/alta-arbitro">Alta de Árbitro</Link></li>
-                    </ul>
-                </nav>
-                <hr/>
+            <Navbar bg="dark" variant="dark" expand="lg">
+        <Container>
+        <Navbar.Brand as={Link} to="/">Liga REACT</Navbar.Brand>
+        <Navbar.Toggle aria-controls="menu-principal" />
+        <Navbar.Collapse id="menu-principal">
+          <Nav className="me-auto">
+
+            
+            <NavDropdown title="Árbitros" id="nav-arbitros">
+              <NavDropdown.Item as={Link} to="/arbitros">Listado</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/alta-arbitro">Alta</NavDropdown.Item>
+            </NavDropdown>
+
+            <NavDropdown title="Equipos" id="nav-equipos">
+              <NavDropdown.Item as={Link} to="/equipos">Listado</NavDropdown.Item>
+            </NavDropdown>
+
+            <NavDropdown title="Partidos" id="nav-partidos">
+              <NavDropdown.Item as={Link} to="/partidos">Listado</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/fichas-partidos">Fichas</NavDropdown.Item>
+            </NavDropdown>
+
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+               
 
                 <Routes>
                     <Route path="/" element={<Home />}/>

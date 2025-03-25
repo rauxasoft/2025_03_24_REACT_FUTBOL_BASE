@@ -11,7 +11,7 @@ function ListadoFichasPartidos(){
     const [error, setError] = useState<string>();
   
     const estiloFicha = {
-        margin: '10px'
+        margin: '10px',
     }
 
     useEffect(() => {
@@ -42,7 +42,7 @@ function ListadoFichasPartidos(){
     }
 
     return (
-        <>
+        <div className="container mt-4">
         {partidos?.map(partido => (
             <div style={estiloFicha}>
                 <FichaPartido key={partido.id}
@@ -54,12 +54,13 @@ function ListadoFichasPartidos(){
                     linkEquipoVisitante={partido.visitante.linkEscudo}
                     idJornada={partido.numeroJornada}
                     idPartido={partido.id}
+                    estado={partido.estado}
                 />
             </div>
         ))
 
         }
-        </>
+        </div>
     )
 }
 
