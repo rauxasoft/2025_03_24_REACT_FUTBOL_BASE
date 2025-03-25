@@ -39,7 +39,7 @@ function ListadoArbitros(){
 
     return (
         <>
-        <h2>Listado de Partidos</h2>
+        <h2>Listado de Árbitros</h2>
         <Table striped bordered hover>
             <thead>
                 <tr>
