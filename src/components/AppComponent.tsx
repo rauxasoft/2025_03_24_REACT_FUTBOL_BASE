@@ -3,18 +3,8 @@ import Home from "./HomeComponent";
 import ListadoEquipos from "./ListadoEquipoComponent";
 import ListadoArbitros from "./ListadoArbitrosComponent";
 import ListadoPartidos from "./ListadoPartidosComponent";
-import AlbumFichas from "./AlbumEquiposComponent";
 
 function App() {
-
-    if(Math.random() > 0){
-        
-    return(
-        <>
-            <AlbumFichas/>
-        </>
-    )
-}
 
     return (
        
