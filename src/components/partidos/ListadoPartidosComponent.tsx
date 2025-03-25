@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Partido } from "../model/partido";
-import partidoServices from "../services/partidoServices";
+import { Partido } from "../../model/partido";
+import partidoServices from "../../services/partidoServices";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 

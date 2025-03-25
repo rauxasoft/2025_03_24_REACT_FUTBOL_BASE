@@ -1,10 +1,11 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Home from "./HomeComponent";
-import ListadoEquipos from "./ListadoEquipoComponent";
-import ListadoArbitros from "./ListadoArbitrosComponent";
-import ListadoPartidos from "./ListadoPartidosComponent";
-import PartidoAlMinuto from "./PartidoAlMinutoComponent";
-import AltaArbitro from "./AltaArbitroComponent";
+import Home from "./home/HomeComponent";
+import ListadoEquipos from "./equipos/ListadoEquipoComponent";
+import ListadoArbitros from "./arbitros/ListadoArbitrosComponent";
+import ListadoPartidos from "./partidos/ListadoPartidosComponent";
+import PartidoAlMinuto from "./partidos/PartidoAlMinutoComponent";
+import AltaArbitro from "./arbitros/AltaArbitroComponent";
+import ListadoFichasPartidos from "./partidos/ListadoFichasPartidosComponent";
 
 function App() {
 
@@ -15,9 +16,10 @@ function App() {
                 <nav>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/partidos">Listado de Partidos</Link></li>
-                        <li><Link to="/equipos">Listado de Equipos</Link></li>
-                        <li><Link to="/arbitros">Listado de Árbitros</Link></li>
+                        <li><Link to="/partidos">Partidos</Link></li>
+                        <li><Link to="/fichas-partidos">Fichas de Partidos</Link></li>
+                        <li><Link to="/equipos">Equipos</Link></li>
+                        <li><Link to="/arbitros">Árbitros</Link></li>
                         <li><Link to="/alta-arbitro">Alta de Árbitro</Link></li>
                     </ul>
                 </nav>
@@ -26,6 +28,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/partidos" element={<ListadoPartidos />}/>
+                    <Route path="/fichas-partidos" element={<ListadoFichasPartidos />}/>
                     <Route path="/ficha-partido-minuto/:id" element={<PartidoAlMinuto />}/>
                     <Route path="/equipos" element={<ListadoEquipos />}/>
                     <Route path="/arbitros" element={<ListadoArbitros />}/>  

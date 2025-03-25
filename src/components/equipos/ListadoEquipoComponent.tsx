@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { Arbitro } from "../model/arbitro";
-import arbitroServices from "../services/arbitroServices";
+import { Equipo } from "../../model/equipo";
 import { Table } from "react-bootstrap";
-import { differenceInYears } from "date-fns";
+import equipoServices from "../../services/arbitroServices";
 
-function ListadoArbitros(){
-    
-    const [arbitros, setArbitros] = useState<Arbitro[]>();
+function ListadoEquipos(){
+
+    const [equipos, setEquipos] = useState<Equipo[]>();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>();
   
@@ -18,9 +17,9 @@ function ListadoArbitros(){
 
         setLoading(true);                               
 
-        arbitroServices.getAll()
+        equipoServices.getAll()
             .then(response => {
-                setArbitros(response.data);      
+                setEquipos(response.data);      
             }).catch((error) => {
                 setError(error);
             }).finally(() => {
@@ -39,23 +38,23 @@ function ListadoArbitros(){
 
     return (
         <>
-        <h2>Listado de Árbitros</h2>
+        <h2>Listado de Equipos</h2>
         <Table striped bordered hover>
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre Completo</th>
-                    <th scope="col">Colegio</th>
-                    <th scope="col">Edad</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Escudo</th>
                 </tr>
             </thead>
             <tbody>
-            {arbitros?.map((arbitro) => (
-                <tr key={arbitro.id}>
-                    <td>{arbitro.id}</td>
-                    <td>{arbitro.apellido1} {arbitro.apellido2}, {arbitro.nombre} </td>
-                    <td>{arbitro.colegio}</td>
-                    <td>{differenceInYears(new Date(), arbitro.fechaNacimiento)}</td>
+            {equipos?.map((equipo) => (
+                <tr key={equipo.id}>
+                    <td>{equipo.id}</td>
+                    <td>{equipo.nombre}</td>
+                    <td>{equipo.ciudad}</td>
+                    <td>{equipo.linkEscudo}</td>
                 </tr>
             ))}    
             </tbody>
@@ -64,4 +63,4 @@ function ListadoArbitros(){
     )
 }
 
-export default ListadoArbitros   
+export default ListadoEquipos

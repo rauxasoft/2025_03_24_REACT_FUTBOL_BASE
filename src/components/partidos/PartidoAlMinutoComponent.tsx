@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Partido } from "../model/partido";
-import { BASE_URL } from "../helper/constantesGlobales";
+import { Partido } from "../../model/partido";
+import { BASE_URL } from "../../helper/constantesGlobales";
 import axios from "axios";
 import { format } from "date-fns";
 import { Spinner, Table } from "react-bootstrap";

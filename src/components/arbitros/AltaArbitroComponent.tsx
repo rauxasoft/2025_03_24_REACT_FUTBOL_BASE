@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Arbitro } from "../model/arbitro";
-import arbitroServices from "../services/arbitroServices";
+import { Arbitro } from "../../model/arbitro";
+
 import { useNavigate } from "react-router";
-//import { useNavigate } from "react-router";
+import arbitroServices from "../../services/arbitroServices";
 
 function AltaArbitro() {
 

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Equipo } from "../model/equipo";
+import { Arbitro } from "../../model/arbitro";
+import arbitroServices from "../../services/arbitroServices";
 import { Table } from "react-bootstrap";
-import equipoServices from "../services/arbitroServices";
+import { differenceInYears } from "date-fns";
 
-function ListadoEquipos(){
-
-    const [equipos, setEquipos] = useState<Equipo[]>();
+function ListadoArbitros(){
+    
+    const [arbitros, setArbitros] = useState<Arbitro[]>();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>();
   
@@ -17,9 +18,9 @@ function ListadoEquipos(){
 
         setLoading(true);                               
 
-        equipoServices.getAll()
+        arbitroServices.getAll()
             .then(response => {
-                setEquipos(response.data);      
+                setArbitros(response.data);      
             }).catch((error) => {
                 setError(error);
             }).finally(() => {
@@ -38,23 +39,23 @@ function ListadoEquipos(){
 
     return (
         <>
-        <h2>Listado de Equipos</h2>
+        <h2>Listado de Árbitros</h2>
         <Table striped bordered hover>
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Escudo</th>
+                    <th scope="col">Nombre Completo</th>
+                    <th scope="col">Colegio</th>
+                    <th scope="col">Edad</th>
                 </tr>
             </thead>
             <tbody>
-            {equipos?.map((equipo) => (
-                <tr key={equipo.id}>
-                    <td>{equipo.id}</td>
-                    <td>{equipo.nombre}</td>
-                    <td>{equipo.ciudad}</td>
-                    <td>{equipo.linkEscudo}</td>
+            {arbitros?.map((arbitro) => (
+                <tr key={arbitro.id}>
+                    <td>{arbitro.id}</td>
+                    <td>{arbitro.apellido1} {arbitro.apellido2}, {arbitro.nombre} </td>
+                    <td>{arbitro.colegio}</td>
+                    <td>{differenceInYears(new Date(), arbitro.fechaNacimiento)}</td>
                 </tr>
             ))}    
             </tbody>
@@ -63,4 +64,4 @@ function ListadoEquipos(){
     )
 }
 
-export default ListadoEquipos
+export default ListadoArbitros   
