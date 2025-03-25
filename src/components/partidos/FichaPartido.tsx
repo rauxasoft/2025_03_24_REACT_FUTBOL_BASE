@@ -20,14 +20,14 @@ function FichaPartido(partidoProps: PartidoProps){
         </div>
         
         <img src={partidoProps.linkEquipoLocal}
-             className="card-img-top p-3"
-             alt="link escudo equipo local"
-             style={{height: "100px", objectFit:"contain"}}
+            className="card-img-top p-3"
+            alt="link escudo equipo local"
+            style={{height: "100px", objectFit:"contain"}}
         />
          <img src={partidoProps.linkEquipoVisitante}
-             className="card-img-top p-3"
-             alt="link escudo equipo visitante"
-             style={{height: "100px", objectFit:"contain"}}
+            className="card-img-top p-3"
+            alt="link escudo equipo visitante"
+            style={{height: "100px", objectFit:"contain"}}
         />
 
         <div className="card-body">
