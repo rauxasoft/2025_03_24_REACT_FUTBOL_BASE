@@ -3,6 +3,7 @@ import Home from "./HomeComponent";
 import ListadoEquipos from "./ListadoEquipoComponent";
 import ListadoArbitros from "./ListadoArbitrosComponent";
 import ListadoPartidos from "./ListadoPartidosComponent";
+import PartidoAlMinuto from "./PartidoAlMinutoComponent";
 
 function App() {
 
@@ -10,23 +11,23 @@ function App() {
        
         <BrowserRouter>
             <div className="container">
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/partidos">Listado de Partidos</Link></li>
-                    <li><Link to="/equipos">Listado de Equipos</Link></li>
-                    <li><Link to="/arbitros">Listado de Árbitros</Link></li>
-                </ul>
-            </nav>
-            <hr/>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/partidos">Listado de Partidos</Link></li>
+                        <li><Link to="/equipos">Listado de Equipos</Link></li>
+                        <li><Link to="/arbitros">Listado de Árbitros</Link></li>
+                    </ul>
+                </nav>
+                <hr/>
 
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/partidos" element={<ListadoPartidos />}/>
-                <Route path="/equipos" element={<ListadoEquipos />}/>
-                <Route path="/arbitros" element={<ListadoArbitros />}/>
-                
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />}/>
+                    <Route path="/partidos" element={<ListadoPartidos />}/>
+                    <Route path="/ficha-partido-minuto/:id" element={<PartidoAlMinuto />}/>
+                    <Route path="/equipos" element={<ListadoEquipos />}/>
+                    <Route path="/arbitros" element={<ListadoArbitros />}/>  
+                </Routes>
             </div>
         </BrowserRouter>
     );

@@ -2,28 +2,29 @@ import { useEffect, useState } from "react";
 import { Partido } from "../model/partido";
 import partidoServices from "../services/partidoServices";
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function ListadoPartidos(){
 
     const [partidos, setPartidos] = useState<Partido[]>();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>();
-
+  
     useEffect(() => {
         fetchData();
     }, []);
 
     const fetchData = () => {
 
-        setLoading(() => true);                               
+        setLoading(true);                               
 
         partidoServices.getAll()
             .then(response => {
-                setPartidos(() => response.data);      
-            }).catch(() => {
-                setError("Error al traer datos");
+                setPartidos(response.data);      
+            }).catch((error) => {
+                setError(error);
             }).finally(() => {
-                setLoading(() => false);
+                setLoading(false);
             });
 
     }
@@ -50,9 +51,10 @@ function ListadoPartidos(){
                     <th scope="col">Estado</th>
                 </tr>
             </thead>
-            {partidos?.map((partido, i) => (
-                <tr key={i}>
-                    <td>{partido.id}</td>
+            <tbody>
+            {partidos?.map((partido) => (
+                <tr key={partido.id}>
+                    <td><Link to={`/ficha-partido-minuto/${partido.id}`}>{partido.id}</Link></td>
                     <td>{partido.local.nombre}</td>
                     <td>{partido.golesLocal}</td>
                     <td>{partido.visitante.nombre}</td>
@@ -60,8 +62,6 @@ function ListadoPartidos(){
                     <td>{partido.estado}</td>
                 </tr>
             ))}    
-            <tbody>
-
             </tbody>
         </Table>
         </>
