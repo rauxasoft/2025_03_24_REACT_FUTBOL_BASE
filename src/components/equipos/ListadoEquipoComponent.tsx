@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Equipo } from "../../model/equipo";
 import { Table } from "react-bootstrap";
-import equipoServices from "../../services/arbitroServices";
+import equipoServices from "../../services/equipoServices";
 
 function ListadoEquipos(){
 

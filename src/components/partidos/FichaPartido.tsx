@@ -13,22 +13,24 @@ function FichaPartido(partidoProps: PartidoProps){
 
     return (
         
-        <div className="card text-center mx-auto" style={{ width: "26rem" }}>
+        <div className="card text-center mx-auto" style={{ width: "24rem" }}>
         
         <div>
-            <h3 className="card-title">{partidoProps.equipoLocal} - {partidoProps.equipoVisitante}</h3>
+            <h4 className="card-title">{partidoProps.equipoLocal} - {partidoProps.equipoVisitante}</h4>
         </div>
         
-        <img src={partidoProps.linkEquipoLocal}
-            className="card-img-top p-3"
-            alt="link escudo equipo local"
-            style={{height: "100px", objectFit:"contain"}}
-        />
-         <img src={partidoProps.linkEquipoVisitante}
-            className="card-img-top p-3"
-            alt="link escudo equipo visitante"
-            style={{height: "100px", objectFit:"contain"}}
-        />
+        <div className="d-flex justify-content-center align-items-center gap-3">
+            <img src={partidoProps.linkEquipoLocal}
+                className="card-img-top p-3"
+                alt="link escudo equipo local"
+                style={{height: "140px", objectFit:"contain"}}
+            />
+            <img src={partidoProps.linkEquipoVisitante}
+                className="card-img-top p-3"
+                alt="link escudo equipo visitante"
+                style={{height: "140px", objectFit:"contain"}}
+            />
+        </div>
 
         <div className="card-body">
            

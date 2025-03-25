@@ -10,6 +10,10 @@ function ListadoFichasPartidos(){
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>();
   
+    const estiloFicha = {
+        margin: '10px'
+    }
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -40,16 +44,18 @@ function ListadoFichasPartidos(){
     return (
         <>
         {partidos?.map(partido => (
-            <FichaPartido key={partido.id}
-                equipoLocal={partido.local.nombre}
-                equipoVisitante={partido.visitante.nombre}
-                fechaPatido={format(partido.fecha, "dd/MM/yyyy")}
-                horaPartido={format(partido.fecha, "HH:mm")}
-                linkEquipoLocal={partido.local.linkEscudo}
-                linkEquipoVisitante={partido.visitante.linkEscudo}
-                idJornada={partido.numeroJornada}
-                idPartido={partido.id}
-            />
+            <div style={estiloFicha}>
+                <FichaPartido key={partido.id}
+                    equipoLocal={partido.local.nombre}
+                    equipoVisitante={partido.visitante.nombre}
+                    fechaPatido={format(partido.fecha, "dd/MM/yyyy")}
+                    horaPartido={format(partido.fecha, "HH:mm")}
+                    linkEquipoLocal={partido.local.linkEscudo}
+                    linkEquipoVisitante={partido.visitante.linkEscudo}
+                    idJornada={partido.numeroJornada}
+                    idPartido={partido.id}
+                />
+            </div>
         ))
 
         }
