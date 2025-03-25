@@ -3,4 +3,5 @@ export interface Equipo {
     nombre: string;
     cumpleFairPlayFinanciero: boolean;
     linkEscudo: string;
+    ciudad:string;
 }

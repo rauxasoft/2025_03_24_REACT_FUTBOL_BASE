@@ -60,10 +60,10 @@ function PartidoAlMinuto(){
     }
 
     function mostrarSoloGoles(){
-        setSoloGoles(x => !x);
+        setSoloGoles(soloGoles => !soloGoles);
     }
 
-    const lancesFiltrados = soloGoles ? partido.lances.filter(lance => lance.tipoLance.nombre.includes('GOL')) : partido.lances
+    const lancesFiltrados = soloGoles ? partido?.lances.filter(lance => lance.tipoLance.nombre.includes('GOL')) : partido?.lances
     
     return (
         <>
