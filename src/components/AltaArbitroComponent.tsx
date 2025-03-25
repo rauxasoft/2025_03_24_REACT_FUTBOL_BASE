@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 function AltaArbitro() {
 
-    const [nombre, setNombre] = useState('Agapito');
+    const [nombre, setNombre] = useState('');
     const [apellido1, setApellido1] = useState('');
     const [apellido2, setApellido2] = useState('');
     const [fechaNacimiento, setFechaNacimiento] = useState('');
@@ -30,7 +30,7 @@ function AltaArbitro() {
 
         try{
             await arbitroServices.create(newArbitro);
-            navigate('/');
+            navigate('/arbitros'); // navegación programática
         } catch(err){
             console.log(err);
             setError('Error al intentar crear el arebitro');
